@@ -1,0 +1,1 @@
+<?phprequire('../conf.sec.php');require($conf['loc']['db']);try {	$db = new Database;	$db->connect($conf['db']['host'], $conf['db']['user'], $conf['db']['pass']);	$db->select_db($conf['db']['db']);	echo $db->ammount('SELECT `id` FROM `players` WHERE `online` = 1');} catch (Exception $e) {	echo $e->getMessage();}?>
